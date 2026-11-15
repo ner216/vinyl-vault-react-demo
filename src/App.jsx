@@ -12,24 +12,23 @@ import CheckoutPage from './pages/CheckoutPage.jsx';
 function App() {
   const [cart, setCart] = useState([]);
   const [isCartOpen, setIsCartOpen] = useState(false);
-  const cartCount = 10;
 
-  const handleAddToCart = (product, quantity = 1) => {
+  const handleAddToCart = (album, quantity = 1) => {
     const quantityToAdd = Math.max(
       1, 
       Math.min(Number(quantity) || 1, 
-      product.stock
+      album.stock
     ));
 
     setCart((currentCart) => {
-      const existingItem = currentCart.find((item) => item.id === product.id);
+      const existingItem = currentCart.find((item) => item.id === album.id);
 
       if (!existingItem) {
-        return [...currentCart, { ...product, quantity: quantityToAdd }];
+        return [...currentCart, { ...album, quantity: quantityToAdd }];
       }
 
       return currentCart.map((item) => 
-        item.id == product.id
+        item.id == album.id
           ? {
             ...item,
             quantity: Math.min(item.stock, item.quantity + quantityToAdd),
@@ -39,9 +38,9 @@ function App() {
     });
   };
 
-  const handleUpdateQuantity = (productId, change) => {
+  const handleUpdateQuantity = (albumId, change) => {
     setCart((currentCart) => currentCart.map((item) => {
-      if (item.id !== productId) return item;
+      if (item.id !== albumId) return item;
 
       const updateQuantity = Math.min(item.stock, item.quantity + change);
 
@@ -50,11 +49,13 @@ function App() {
     );
   };
 
-  const handleRemoveFromCart = (productId) => {
+  const handleRemoveFromCart = (albumId) => {
     setCart((currentCart) =>
-      currentCart.filter((item) => item.id !== productId),
+      currentCart.filter((item) => item.id !== albumId),
     );
   };
+
+  const cartCount = cart.reduce((count, item) => count + item.quantity, 0);
 
   return (
     <>

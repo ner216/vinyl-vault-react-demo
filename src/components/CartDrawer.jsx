@@ -51,7 +51,7 @@ const CartDrawer = ({ isOpen, cart, onClose, onUpdateQuantity, onRemove }) => {
                                             <button
                                                 type="button"
                                                 aria-label={`Decrease ${item.name} quantity`}
-                                                onClick={() => onUpdateQuantity(item.id, 1)}
+                                                onClick={() => onUpdateQuantity(item.id, -1)}
                                             >
                                                 -
                                             </button>
