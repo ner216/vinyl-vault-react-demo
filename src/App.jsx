@@ -6,6 +6,8 @@ import './App.css'
 import Navbar from "./components/Navbar";
 import CatalogPage from './pages/CatalogPage';
 import CartDrawer from './components/CartDrawer.jsx';
+import AlbumDetailPage from './pages/AlbumDetailPage.jsx';
+import CheckoutPage from './pages/CheckoutPage.jsx';
 
 function App() {
   const [cart, setCart] = useState([]);
@@ -63,6 +65,24 @@ function App() {
             path="/"
             element={
               <CatalogPage albums={ALBUMS} onAddToCart={handleAddToCart}/>
+            }
+          />
+          <Route
+            path="/albums/:albumId"
+            element={
+              <AlbumDetailPage
+                products={ALBUMS}
+                onAddToCart={handleAddToCart}
+              />
+            }
+          />
+          <Route
+            path="/checkout"
+            element={
+              <CheckoutPage
+                cart={cart}
+                onClearCart={() => setCart([])}
+              />
             }
           />
         </Routes>

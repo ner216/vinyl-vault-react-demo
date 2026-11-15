@@ -25,7 +25,6 @@ body {
   line-height: 1.5;
 }
 
-/* HEADER & NAV */
 .site-header {
   position: sticky;
   top: 0;
@@ -83,14 +82,12 @@ body {
   border-radius: 9999px;
 }
 
-/* MAIN CONTENT LAYOUT */
 .main-content {
   max-width: 1200px;
   margin: 0 auto;
   padding: 2rem 1.5rem;
 }
 
-/* CATALOG HERO & FILTER BAR */
 .catalog-hero {
   text-align: center;
   margin-bottom: 2rem;
@@ -129,14 +126,13 @@ body {
   border-color: var(--primary);
 }
 
-/* PRODUCT GRID */
-.product-grid {
+.album-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
   gap: 2rem;
 }
 
-.product-card {
+.album-card {
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: 8px;
@@ -145,42 +141,41 @@ body {
   flex-direction: column;
 }
 
-.product-image {
+.album-image {
   width: 100%;
   height: 220px;
   object-fit: cover;
 }
 
-.product-body {
+.album-body {
   padding: 1.25rem;
   display: flex;
   flex-direction: column;
   flex-grow: 1;
 }
 
-.product-category {
+.album-category {
   font-size: 0.75rem;
   color: var(--muted);
   text-transform: uppercase;
   letter-spacing: 0.05em;
 }
 
-.product-title {
+.album-title {
   font-size: 1.1rem;
   margin: 0.35rem 0;
 }
 
-.product-title a {
+.album-title a {
   text-decoration: none;
   color: var(--text);
 }
 
-.product-price {
+.album-price {
   font-weight: 700;
   margin-bottom: 1rem;
 }
 
-/* BUTTONS */
 .btn {
   display: inline-flex;
   align-items: center;
@@ -213,7 +208,6 @@ body {
   margin-top: auto;
 }
 
-/* CART DRAWER */
 .drawer-overlay {
   position: fixed;
   inset: 0;
@@ -305,7 +299,6 @@ body {
   margin-bottom: 1rem;
 }
 
-/* DETAIL & CHECKOUT GRIDS */
 .detail-grid,
 .checkout-grid {
   display: grid;
