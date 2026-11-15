@@ -9,7 +9,7 @@ const AlbumCard = ({ album, onAddToCart }) => {
                 <img
                     className="album-image"
                     src={album.image}
-                    alt={album.name}
+                    alt={album.title}
                     loading="lazy"
                 />
             </Link>
@@ -18,7 +18,7 @@ const AlbumCard = ({ album, onAddToCart }) => {
                     {album.category}
                 </span>
                 <h3 className="album-title">
-                    <Link to={`/albums/${album.id}`}>{album.name}</Link>
+                    <Link to={`/albums/${album.id}`}>{album.title}</Link>
                 </h3>
                 <p className="album-price">
                     $ {typeof album.price === "number" ? album.price.toFixed(2) : "Contact For Price"}

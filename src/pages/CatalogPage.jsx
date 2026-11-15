@@ -2,13 +2,13 @@ import { useState } from "react";
 import AlbumCard from "../components/AlbumCard.jsx";
 
 function CatalogPage({ albums = [], onAddToCart }) {
-    const catagories = ["All", "Jazz", "Electronic", "Rock", "Classical"];
+    const categories = ["All", "Jazz", "Electronic", "Rock", "Classical"];
     const [selectedCategory, setSelectedCategory] = useState("All");
 
-    const filteredProducts = 
+    const filteredAlbums = 
         selectedCategory === "All" 
         ? albums
-        : albums.filter((album) => album.category === selectedCategory);
+        : albums.filter((album) => album.genre === selectedCategory);
 
     return (
         <div className="catalog-container">
@@ -17,7 +17,7 @@ function CatalogPage({ albums = [], onAddToCart }) {
                 <p>Keep listening to the medium you know</p>
             </header>
             <div className="filter-bar">
-                {catagories.map((category) => (
+                {categories.map((category) => (
                     <button
                         key={category}
                         type="button"
@@ -28,11 +28,11 @@ function CatalogPage({ albums = [], onAddToCart }) {
                     </button>
                 ))}
             </div>
-            <div className="product-grid">
-                {filteredProducts.map((album) => (
+            <div className="album-grid">
+                {filteredAlbums.map((album) => (
                     <AlbumCard
                         key={album.id}
-                        product={album}
+                        album={album}
                         onAddToCart={onAddToCart}
                     />
                 ))}
