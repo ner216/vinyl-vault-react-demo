@@ -71,7 +71,7 @@ function App() {
             path="/albums/:albumId"
             element={
               <AlbumDetailPage
-                products={ALBUMS}
+                albums={ALBUMS}
                 onAddToCart={handleAddToCart}
               />
             }

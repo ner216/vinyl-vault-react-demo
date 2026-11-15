@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Link, useParams } from "react-router";
 
 const AlbumDetailPage = ({ albums, onAddToCart }) => {
-    const { productId } = useParams();
+    const { albumId } = useParams();
     const [qty, setQty] = useState(1);
 
     const album = albums.find((p) => p.id === albumId);
