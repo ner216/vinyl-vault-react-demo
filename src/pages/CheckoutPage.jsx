@@ -54,7 +54,6 @@ const CheckoutPage = ({ cart, onClearCart }) => {
     return (
         <div className="checkout-container">
             <h1>Checkout</h1>
-
             <div className="checkout-grid">
                 <form className="checkout-form" onSubmit={handleSubmit}>
                     <h2>Shipping</h2>
@@ -94,12 +93,12 @@ const CheckoutPage = ({ cart, onClearCart }) => {
                     <div className="form-group">
                         <label htmlFor="zipCode">Zip Code</label>
                         <input
-                        type="text"
-                        name="zipCode"
-                        id="zipCode"
-                        required
-                        value={formData.zipCode}
-                        onChange={handleChange}
+                            type="text"
+                            name="zipCode"
+                            id="zipCode"
+                            required
+                            value={formData.zipCode}
+                            onChange={handleChange}
                         />
                     </div>
                     <button type="submit" className="btn btn-primary btn-lg">

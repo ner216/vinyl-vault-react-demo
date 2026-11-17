@@ -12,21 +12,23 @@ function CatalogPage({ albums = [], onAddToCart }) {
 
     return (
         <div className="catalog-container">
-            <header className="catalog-hero">
-                <h1>Most Popular Retro Music</h1>
-                <p>Keep listening to the medium you know</p>
-            </header>
-            <div className="filter-bar">
-                {categories.map((category) => (
-                    <button
-                        key={category}
-                        type="button"
-                        className={`filter-pill ${selectedCategory === category ? "active" : ""}`}
-                        onClick={() => setSelectedCategory(category)}
-                    >
-                        {category}
-                    </button>
-                ))}
+            <div className="hero-wrapper">
+                <header className="catalog-hero">
+                    <h1>Most Popular Retro Music</h1>
+                    <p>Keep listening to the medium you know</p>
+                </header>
+                <div className="filter-row">
+                    {categories.map((category) => (
+                        <button
+                            key={category}
+                            type="button"
+                            className={`filter-pill ${selectedCategory === category ? "active" : ""}`}
+                            onClick={() => setSelectedCategory(category)}
+                        >
+                            {category}
+                        </button>
+                    ))}
+                </div>
             </div>
             <div className="album-grid">
                 {filteredAlbums.map((album) => (

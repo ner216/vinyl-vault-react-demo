@@ -6,7 +6,7 @@ const Navbar = ({ cartCount, onOpenCart }) => {
     <header className="site-header">
       <div className="header-inner">
         <Link className="brand-logo" to="/">
-          Vynil Vault
+          <img src="../public/favicon.png" alt="brand logo" className="brand-logo-img"/> Vynil Vault
         </Link>
         <nav className="nav-actions">
           <Link className="nav-link" to="/">

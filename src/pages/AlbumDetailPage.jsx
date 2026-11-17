@@ -62,6 +62,23 @@ const AlbumDetailPage = ({ albums, onAddToCart }) => {
                         </button>
                     </div>
                 </div>
+                <div className="detail-specs">
+                    <h2>Record Specifications</h2>
+                    <ul className="detail-list">
+                        <li>Catalog: {album.specs.catalogNumber}</li>
+                        <li>Weight: {album.specs.weight}</li>
+                        <li>Speed: {album.specs.speed}</li>
+                        <li>Label: {album.specs.label}</li>
+                    </ul>
+                </div>
+                <div className="detail-tracks">
+                    <h2>Included Tracks</h2>
+                    <ul className="detail-list">
+                        {album.tracklist.map((track) => (
+                            <li>{track}</li>
+                        ))}
+                    </ul>
+                </div>
             </div>
         </div>
     )

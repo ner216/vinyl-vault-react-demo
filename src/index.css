@@ -1,6 +1,6 @@
 /* src/styles.css  */
 :root {
-  --bg: #fafaf9;
+  --bg: #e6e5e5;
   --surface: #ffffff;
   --text: #1c1917;
   --muted: #78716c;
@@ -31,6 +31,8 @@ body {
   background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(5px);
   border-bottom: 1px solid var(--border);
+  border-bottom-left-radius: 800px;
+  border-bottom-right-radius: 800px;
   z-index: 100;
   padding: 1rem 2rem;
 }
@@ -48,6 +50,11 @@ body {
   font-weight: 700;
   text-decoration: none;
   color: var(--text);
+}
+
+.brand-logo-img {
+  height: 30px;
+  width: 30px;
 }
 
 .nav-actions {
@@ -88,6 +95,12 @@ body {
   padding: 2rem 1.5rem;
 }
 
+.hero-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
 .catalog-hero {
   text-align: center;
   margin-bottom: 2rem;
@@ -102,11 +115,16 @@ body {
   color: var(--muted);
 }
 
-.filter-bar {
+.filter-row {
+  background-color: var(--surface);
+  border-radius: 999px;
+  padding: 0.5rem;
   display: flex;
-  justify-content: center;
+  flex-wrap: wrap;
+  align-items: center;
   gap: 0.75rem;
-  margin-bottom: 2.5rem;
+  margin-bottom: 2rem;
+  align-self: center;
 }
 
 .filter-pill {
@@ -118,6 +136,7 @@ body {
   font-size: 0.9rem;
   font-weight: 500;
   transition: all 0.2s;
+  max-width: 7rem;
 }
 
 .filter-pill.active {
@@ -135,7 +154,7 @@ body {
 .album-card {
   background: var(--surface);
   border: 1px solid var(--border);
-  border-radius: 8px;
+  border-radius: 16px;
   overflow: hidden;
   display: flex;
   flex-direction: column;
