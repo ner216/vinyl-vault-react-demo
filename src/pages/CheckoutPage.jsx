@@ -101,20 +101,34 @@ const CheckoutPage = ({ cart, onClearCart }) => {
                             onChange={handleChange}
                         />
                     </div>
-                    <button type="submit" className="btn btn-primary btn-lg">
+                    <button type="submit" className="btn btn-primary btn-block">
                         Place Order
                     </button>
                 </form>
 
-                <hr />
-                <div className="summary-row">
-                    <span>Subtotal:</span>
-                    <span>${subtotal.toFixed(2)}</span>
-                </div>
-                <div className="summary-row total-row">
-                    <span>Total:</span>
-                    <span>${total.toFixed(2)}</span>
-                </div>
+                <aside className="order-summary-card">
+                    <h3>Summary</h3>
+                    <ul className="summary-list">
+                        {cart.map((item) => (
+                        <li key={item.id} className="summary-row">
+                            <span>
+                            {item.name} &times; {item.quantity}
+                            </span>
+                            <span>${(item.price * item.quantity).toFixed(2)}</span>
+                        </li>
+                        ))}
+                    </ul>
+                    <hr />
+                    <div className="summary-row">
+                        <span>Subtotal:</span> <span>${subtotal.toFixed(2)}</span>
+                    </div>
+                    <div className="summary-row">
+                        <span>Estimated Tax (6%):</span> <span>${taxes.toFixed(2)}</span>
+                    </div>
+                    <div className="summary-row total-row">
+                        <span>Total:</span> <span>${total.toFixed(2)}</span>
+                    </div>
+                </aside>
             </div>
         </div>
     );
