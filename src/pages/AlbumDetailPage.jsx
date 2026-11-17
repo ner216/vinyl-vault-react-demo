@@ -28,9 +28,9 @@ const AlbumDetailPage = ({ albums, onAddToCart }) => {
                 <img src={album.image} alt={album.name} className="detail-img" />
 
                 <div className="detail-info">
-                    <span className="product-category">{album.category}</span>
-                    <h1 className="detail-title">{album.name}</h1>
-                    <p className="detail-price">{album.price.toFixed(2)}</p>
+                    <span className="album-category">{album.genre}</span>
+                    <h1 className="detail-title">{album.title}</h1>
+                    <p className="detail-price">${album.price.toFixed(2)}</p>
                     <p className="detail-desc">{album.description}</p>
                     <div className="stock-tag">
                         {album.stock > 0 ? 
@@ -62,8 +62,8 @@ const AlbumDetailPage = ({ albums, onAddToCart }) => {
                         </button>
                     </div>
                 </div>
-                <div className="detail-specs">
-                    <h2>Record Specifications</h2>
+                <div className="detail-info">
+                    <h2 className="detail-header">Record Specifications</h2>
                     <ul className="detail-list">
                         <li>Catalog: {album.specs.catalogNumber}</li>
                         <li>Weight: {album.specs.weight}</li>
@@ -71,8 +71,8 @@ const AlbumDetailPage = ({ albums, onAddToCart }) => {
                         <li>Label: {album.specs.label}</li>
                     </ul>
                 </div>
-                <div className="detail-tracks">
-                    <h2>Included Tracks</h2>
+                <div className="detail-info">
+                    <h2 className="detail-header">Included Tracks</h2>
                     <ul className="detail-list">
                         {album.tracklist.map((track) => (
                             <li>{track}</li>

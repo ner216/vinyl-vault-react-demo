@@ -8,6 +8,7 @@
   --primary: #8126af;
   --primary-hover: #61308f;
   --font: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --transition-speed: 0.3s;
 }
 
 *,
@@ -144,6 +145,10 @@ body {
   border-color: var(--primary);
 }
 
+.filter-pill:hover {
+  border-color: var(--primary);
+}
+
 .album-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
@@ -157,6 +162,12 @@ body {
   overflow: hidden;
   display: flex;
   flex-direction: column;
+  transition: transform var(--transition-speed), border var(--transition-speed);
+}
+
+.album-card:hover {
+  transform: scale(1.04);
+  border: 3px solid var(--primary-hover);
 }
 
 .album-image {
@@ -230,6 +241,10 @@ body {
 .btn-block {
   width: 100%;
   margin-top: auto;
+}
+
+.btn-block:hover {
+  border-color: var(--primary-hover);
 }
 
 .drawer-overlay {
@@ -333,7 +348,43 @@ body {
 
 .detail-img {
   width: 100%;
-  border-radius: 8px;
+  border-radius: 10px;
+}
+
+.detail-header {
+  padding-bottom: 1rem;
+}
+
+.detail-list {
+  list-style-type: none;
+}
+
+.detail-list li {
+  padding: 0.2rem;
+  color: var(--muted);
+}
+
+.detail-info {
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 1rem;
+}
+
+.detail-desc {
+  margin-bottom: 0.7rem;
+}
+
+.detail-price {
+  font-weight: 700;
+  margin-bottom: 0.4rem;
+}
+
+.stock-tag {
+  margin-bottom: 0.7rem;
+}
+
+.qty-input-group {
+  margin-bottom: 0.7rem;
 }
 
 .form-group {
