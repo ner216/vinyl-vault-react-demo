@@ -33,6 +33,14 @@ npm install
 npm run dev
 ```
 
+## Project Structure
+
+- `/public` Assets that are read by browser without being processed first by the framework.
+- `/src`    Main code for the project.
+- `/src/assets` Assets that are bundled with code and processed by framework.
+- `/src/components` React component implementations.
+- `/src/data`   Mock data for project demo.
+- `/src/pages`  React component implementations for app webpages.
 
 ## Credits
 
