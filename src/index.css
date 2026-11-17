@@ -4,9 +4,9 @@
   --surface: #ffffff;
   --text: #1c1917;
   --muted: #78716c;
-  --border: #e7e5e4;
-  --primary: #854d0e;
-  --primary-hover: #713f12;
+  --border: #525252;
+  --primary: #8126af;
+  --primary-hover: #61308f;
   --font: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
 
@@ -30,9 +30,8 @@ body {
   top: 0;
   background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(5px);
-  border-bottom: 1px solid var(--border);
-  border-bottom-left-radius: 800px;
-  border-bottom-right-radius: 800px;
+  border-radius: 20px;
+  margin: 10px;
   z-index: 100;
   padding: 1rem 2rem;
 }
@@ -73,7 +72,7 @@ body {
   background: var(--surface);
   border: 1px solid var(--border);
   padding: 0.5rem 1rem;
-  border-radius: 9999px;
+  border-radius: 8px;
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -117,7 +116,7 @@ body {
 
 .filter-row {
   background-color: var(--surface);
-  border-radius: 999px;
+  border-radius: 8px;
   padding: 0.5rem;
   display: flex;
   flex-wrap: wrap;
@@ -131,7 +130,7 @@ body {
   background: var(--surface);
   border: 1px solid var(--border);
   padding: 0.4rem 1.2rem;
-  border-radius: 9999px;
+  border-radius: 8px;
   cursor: pointer;
   font-size: 0.9rem;
   font-weight: 500;
@@ -153,7 +152,7 @@ body {
 
 .album-card {
   background: var(--surface);
-  border: 1px solid var(--border);
+  border: 6px solid #fff;
   border-radius: 16px;
   overflow: hidden;
   display: flex;
@@ -200,7 +199,7 @@ body {
   align-items: center;
   justify-content: center;
   padding: 0.6rem 1.2rem;
-  border-radius: 6px;
+  border-radius: 8px;
   border: 1px solid transparent;
   cursor: pointer;
   font-weight: 600;
@@ -220,6 +219,12 @@ body {
   background: transparent;
   border-color: var(--border);
   color: var(--text);
+}
+
+.btn-minor {
+  padding: 0.5rem;
+  border: 1px solid #fff;
+  border-radius: 999px;
 }
 
 .btn-block {

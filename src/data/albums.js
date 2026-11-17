@@ -76,7 +76,7 @@ export const ALBUMS = [
     genre: "Classical",
     price: 31.25,
     stock: 4,
-    image: "https://images.unsplash.com/photo-1520523839898-507125cd53c1?w=600&auto=format&fit=crop&q=60",
+    image: "https://images.unsplash.com/photo-1693306062261-7c406932b3a9?q=80&w=764&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D",
     description: "The landmark 1981 digital recording documenting Gould's contemplative return to Bach's variations.",
     specs: {
       catalogNumber: "IM-37779",
