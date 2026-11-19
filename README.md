@@ -43,6 +43,8 @@ npm run dev
 
 ## React Component Hierarchy
 
+**Component Hierarchy**
+
 - <App /> (Owner: cart[Array], isCartOpen[Boolean])
     - <Navbar> (Sticky: Logo, Category Link, Cart button with item count)
     - <Routes> 
@@ -53,13 +55,15 @@ npm run dev
             - <AlertModal> (Owner: isOpen[Boolean], onClose[func], message[String])
     - <CartDrawer /> (Owner: isOpen[boolean], cart[array], onClose[func], onUpdateQuantity[func], onRemove[func])
 
-`<Navbar /> -> /components/Navbar.jsx`
-`<AlbumCard> -> /components/AlbumCard.jsx`
-`<CardDrawer> -> /components/CardDrawer.jsx`
-`<AlertModal> -> /components/AlertModal.jsx`
-`<AlbumDetailPage> -> /pages/AlbumDetail.jsx` (Routed page)
-`<CatalogPage.jsx> -> /pages/CatalogPage.jsx`   (Routed page)
-`<CheckoutPage.jsx> -> /pages/CheckoutPage.jsx` (Routed page)
+**Component Locations**
+
+- `<Navbar /> -> /components/Navbar.jsx`
+- `<AlbumCard> -> /components/AlbumCard.jsx`
+- `<CardDrawer> -> /components/CardDrawer.jsx`
+- `<AlertModal> -> /components/AlertModal.jsx`
+- `<AlbumDetailPage> -> /pages/AlbumDetail.jsx` (Routed page)
+- `<CatalogPage.jsx> -> /pages/CatalogPage.jsx`   (Routed page)
+- `<CheckoutPage.jsx> -> /pages/CheckoutPage.jsx` (Routed page)
 
 ## Credits
 
