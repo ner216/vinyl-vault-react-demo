@@ -110,7 +110,7 @@ const CheckoutPage = ({ cart, onClearCart }) => {
                         {cart.map((item) => (
                         <li key={item.id} className="summary-row">
                             <span>
-                            {item.name} &times; {item.quantity}
+                            {item.title} &times; {item.quantity}
                             </span>
                             <span>${(item.price * item.quantity).toFixed(2)}</span>
                         </li>

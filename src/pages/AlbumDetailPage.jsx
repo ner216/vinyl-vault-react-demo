@@ -21,11 +21,11 @@ const AlbumDetailPage = ({ albums, onAddToCart }) => {
     return (
         <div className="detail-container">
             <nav className="breadcrumb">
-                <Link to="/">Catalog</Link> &gt; <span>{album.name}</span>
+                <Link to="/">Catalog</Link> &gt; <span>{album.title}</span>
             </nav>
 
             <div className="detail-grid">
-                <img src={album.image} alt={album.name} className="detail-img" />
+                <img src={album.image} alt={album.title} className="detail-img" />
 
                 <div className="detail-info">
                     <span className="album-category">{album.genre}</span>
@@ -55,7 +55,7 @@ const AlbumDetailPage = ({ albums, onAddToCart }) => {
                         <button
                             className="btn btn-primary"
                             type="button"
-                            disable={album.stock === 0}
+                            disabled={album.stock === 0}
                             onClick={() => onAddToCart(album, qty)}
                         >
                             Add {qty} to cart
@@ -75,7 +75,7 @@ const AlbumDetailPage = ({ albums, onAddToCart }) => {
                     <h2 className="detail-header">Included Tracks</h2>
                     <ul className="detail-list">
                         {album.tracklist.map((track) => (
-                            <li>{track}</li>
+                            <li key={track}>{track}</li>
                         ))}
                     </ul>
                 </div>
