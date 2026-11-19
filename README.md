@@ -20,7 +20,6 @@ sudo snap install node --classic
 git clone https://github.com/ner216/vynil-vault-react-demo.git && cd vynil-vault-react-demo
 ```
 
-
 ### 4. Install dependancies
 
 ```bash

@@ -6,7 +6,7 @@ const CartDrawer = ({ isOpen, cart, onClose, onUpdateQuantity, onRemove }) => {
     if (!isOpen) return null;
 
     const subtotal = cart.reduce(
-        (sum, item) => sum + item.price + item.quantity,
+        (sum, item) => sum + (item.price * item.quantity),
         0,
     );
 
@@ -33,9 +33,9 @@ const CartDrawer = ({ isOpen, cart, onClose, onUpdateQuantity, onRemove }) => {
                             Your Cart is Empty 
                         </div>
                     ) : (
-                        <ul className="cart-list">
+                        <div className="cart-list">
                             {cart.map((item) => (
-                                <li key={item.id} className="cart-item">
+                                <div key={item.id} className="cart-item">
                                     <img
                                         src={item.image}
                                         alt={item.name}
@@ -47,24 +47,26 @@ const CartDrawer = ({ isOpen, cart, onClose, onUpdateQuantity, onRemove }) => {
                                         <p className="cart-item-info">
                                             ${(item.price * item.quantity).toFixed(2)}
                                         </p>
-                                        <div className="qty-controls">
-                                            <button
-                                                type="button"
-                                                aria-label={`Decrease ${item.name} quantity`}
-                                                onClick={() => onUpdateQuantity(item.id, -1)}
-                                                className="btn-minor"
-                                            >
-                                                -
-                                            </button>
-                                            <span>{item.quantity}</span>
-                                            <button
-                                                type="button"
-                                                aria-label={`Increase ${item.name} quantity`}
-                                                onClick={() => onUpdateQuantity(item.id, 1)}
-                                                className="btn-minor"
-                                            >
-                                                +
-                                            </button>
+                                        <div className="item-controls">
+                                            <span className="qty-controls">
+                                                <button
+                                                    type="button"
+                                                    aria-label={`Decrease ${item.name} quantity`}
+                                                    onClick={() => onUpdateQuantity(item.id, -1)}
+                                                    className="btn-minor"
+                                                >
+                                                    -
+                                                </button>
+                                                <span>{item.quantity}</span>
+                                                <button
+                                                    type="button"
+                                                    aria-label={`Increase ${item.name} quantity`}
+                                                    onClick={() => onUpdateQuantity(item.id, 1)}
+                                                    className="btn-minor"
+                                                >
+                                                    +
+                                                </button>
+                                            </span>
                                             <button
                                                 className="btn-remove"
                                                 type="button"
@@ -75,9 +77,9 @@ const CartDrawer = ({ isOpen, cart, onClose, onUpdateQuantity, onRemove }) => {
                                             </button>
                                         </div>
                                     </div>
-                                </li>
+                                </div>
                             ))}
-                        </ul>
+                        </div>
                     )}
                 </div>
                 {cart.length > 0 && (

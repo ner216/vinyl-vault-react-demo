@@ -1,8 +1,10 @@
 import { useState } from "react";
-import { Link } from "react-router";
+import { Navigate } from "react-router";
+import AlertModal from "../components/AlertModal";
 
 const CheckoutPage = ({ cart, onClearCart }) => {
     const [isSubmitted, setIsSubmitted] = useState(false);
+    const [isAlertOpen, setIsAlertOpen ] = useState(false);
 
     const [formData, setFormData] = useState({
         fullName: "",
@@ -26,29 +28,25 @@ const CheckoutPage = ({ cart, onClearCart }) => {
     const handleSubmit = (e) => {
         e.preventDefault();
         setIsSubmitted(true);
+        setIsAlertOpen(true);
         onClearCart();
     };
 
     if (isSubmitted) {
         return (
-            <div className="checkout-success">
-                <h2>Order Placed</h2>
-                <Link className="btn btn-primary" to="/">
-                    Return
-                </Link>
-            </div>
+            <AlertModal
+                isOpen={isAlertOpen}
+                onClose={() => {
+                    setIsAlertOpen(false);
+                    setIsSubmitted(false);
+                }}
+                message="Order Placed"
+            />
         );
     }
 
     if (cart.length === 0) {
-        return (
-            <div className="empty-cart-page">
-                <h2>Cart is Empty</h2>
-                <Link className="btn btn-secondary" to="/">
-                    Return
-                </Link>
-            </div>
-        );
+        return <Navigate to="/" replace />;
     }
 
     return (
