@@ -6,7 +6,7 @@ const Navbar = ({ cartCount, onOpenCart }) => {
     <header className="site-header">
       <div className="header-inner">
         <Link className="brand-logo" to="/">
-          <img src="../public/favicon.png" alt="brand logo" className="brand-logo-img"/> Vinyl Vault
+          <img src="/favicon.png" alt="brand logo" className="brand-logo-img"/> Vinyl Vault
         </Link>
         <nav className="nav-actions">
           <Link className="nav-link" to="/">
