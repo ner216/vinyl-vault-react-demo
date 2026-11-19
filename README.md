@@ -1,4 +1,4 @@
-# vynil-vault-react-demo
+# vinyl-vault-react-demo
 
 ## Development Setup
 
@@ -40,6 +40,26 @@ npm run dev
 - `/src/components` React component implementations.
 - `/src/data`   Mock data for project demo.
 - `/src/pages`  React component implementations for app webpages.
+
+## React Component Hierarchy
+
+- <App /> (Owner: cart[Array], isCartOpen[Boolean])
+    - <Navbar> (Sticky: Logo, Category Link, Cart button with item count)
+    - <Routes> 
+        - <Route path="/" element="{<CatalogPage /> (Owner: albums[Array], onAddToCart[func])}" />
+            - <AlbumCard> (Owner: album[map], onAddToCart[func])
+        - <Route path="/albums/:albumId" element="{<AlbumDetailPage /> (Owner: albums[array], onAddToCart[func])}" />
+        - <Route path="/checkout" element="{<CheckoutPage /> (Owner: cart[array], onClearCart[func])}" />
+            - <AlertModal> (Owner: isOpen[Boolean], onClose[func], message[String])
+    - <CartDrawer /> (Owner: isOpen[boolean], cart[array], onClose[func], onUpdateQuantity[func], onRemove[func])
+
+`<Navbar /> -> /components/Navbar.jsx`
+`<AlbumCard> -> /components/AlbumCard.jsx`
+`<CardDrawer> -> /components/CardDrawer.jsx`
+`<AlertModal> -> /components/AlertModal.jsx`
+`<AlbumDetailPage> -> /pages/AlbumDetail.jsx` (Routed page)
+`<CatalogPage.jsx> -> /pages/CatalogPage.jsx`   (Routed page)
+`<CheckoutPage.jsx> -> /pages/CheckoutPage.jsx` (Routed page)
 
 ## Credits
 

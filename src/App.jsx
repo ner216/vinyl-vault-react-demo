@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { Route, Routes } from 'react-router';
 
 import { ALBUMS } from "./data/albums.js";
-import './App.css'
+import './styles.css'
 import Navbar from "./components/Navbar";
 import CatalogPage from './pages/CatalogPage';
 import CartDrawer from './components/CartDrawer.jsx';
